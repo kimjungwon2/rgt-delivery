@@ -1,5 +1,6 @@
 package com.example.delivery.controller;
 
+import com.example.delivery.config.auth.LoginUser;
 import com.example.delivery.config.auth.dto.SessionUser;
 import javax.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
@@ -16,9 +17,7 @@ public class HomeController {
     private final HttpSession httpSession;
 
     @GetMapping("/")
-    public String home(Model model){
-
-        SessionUser user = (SessionUser) httpSession.getAttribute("member");
+    public String home(Model model, @LoginUser SessionUser user){
 
         if(user!= null){
             model.addAttribute("userName",user.getName());
