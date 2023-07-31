@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RGT 백엔드</title>
+</head>
+<body>
+<h1>OAuth2 로그인</h1>
+<div>
+  <div>
+    <span th:if="${userName == null}">
+      <a href="/oauth2/authorization/google">Google Login</a> <br/>
+    </span>
+    <span th:if="${userName != null}">
+      [[${userName}]]님 안녕하세요.
+      <form th:action="@{/logout}" method="POST" >
+        <button class="btn btn-info" type="submit">로그아웃</button>
+      </form>
+    </span>
+  </div>
+
+  <div>
+    <a href="/move">로그인 사용자만 이동</a> <br/>
+  </div>
+
+</div>
+
+
+</body>
+</html>

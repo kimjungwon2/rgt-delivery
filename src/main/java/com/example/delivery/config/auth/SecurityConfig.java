@@ -14,6 +14,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private final CustomOAuth2UserService customOAuth2UserService;
 
     private static final String[] PUBLIC_URI = {
+            "/",
             "/api/order",
             "/api/modify"
     };
