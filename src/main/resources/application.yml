@@ -8,3 +8,6 @@ spring:
       ddl-auto: create
     database: mysql
     database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+
+logging.level:
+  org.hibernate.SQL: debug

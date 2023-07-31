@@ -17,14 +17,15 @@ public class OrderService {
 
     @Transactional
     public String createOrder(OrderCreateRequest request){
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
-        LocalDateTime dateTime = LocalDateTime.parse(request.getDate_time(),formatter);
+
+        LocalDateTime dateTime = ConvertStringToLocalDateTime(request);
+        renameCafeteria(request);
 
         Order order = Order.builder().
                 id(request.getOrder_id())
                 .productName(request.getProduct_name())
                 .options(request.getOptions())
-                .table_no(request.getTable_no())
+                .tableNo(request.getTable_no())
                 .quantity(request.getQuantity())
                 .orderDate(request.getOrder_date())
                 .orderTime(request.getOrder_time())
@@ -38,9 +39,26 @@ public class OrderService {
 
         orderRepository.save(order);
 
-        String result = String.format("주문번호 : %04d  : 수신",request.getOrder_id());
-
-        return result;
+        return String.format("주문번호 : %04d  : 수신",request.getOrder_id());
     }
+
+    @Transactional
+    public void modifyAllProductName(){
+        orderRepository.modifyAllProductName("카페라떼","카페테리아");
+    }
+
+    private void renameCafeteria(OrderCreateRequest request) {
+        if (request.getProduct_name().equals("카페테리아")){
+            request.modifyProductName("카페라떼");
+        }
+    }
+
+    private LocalDateTime ConvertStringToLocalDateTime(OrderCreateRequest request) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
+        LocalDateTime dateTime = LocalDateTime.parse(request.getDate_time(),formatter);
+
+        return dateTime;
+    }
+
 
 }

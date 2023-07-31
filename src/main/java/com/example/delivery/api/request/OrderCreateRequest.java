@@ -2,7 +2,6 @@ package com.example.delivery.api.request;
 
 import javax.validation.constraints.NotNull;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 import javax.validation.constraints.Positive;
 import lombok.Getter;
@@ -41,4 +40,7 @@ public class OrderCreateRequest {
 
     private String orderer_name;
 
+    public void modifyProductName(String product_name) {
+        this.product_name = product_name;
+    }
 }

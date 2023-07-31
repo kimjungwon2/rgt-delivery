@@ -27,7 +27,7 @@ class OrderRepositoryTest {
                 .id(0007L)
                 .productName("카페모카")
                 .options("")
-                .table_no(3)
+                .tableNo(3)
                 .quantity(1)
                 .orderDate(LocalDate.now())
                 .orderTime(LocalTime.now())
@@ -47,7 +47,7 @@ class OrderRepositoryTest {
         assertThat(order.getId()).isEqualTo(foundOrder.getId());
         assertThat(order.getProductName()).isEqualTo(foundOrder.getProductName());
         assertThat(order.getOptions()).isEqualTo(foundOrder.getOptions());
-        assertThat(order.getTable_no()).isEqualTo(foundOrder.getTable_no());
+        assertThat(order.getTableNo()).isEqualTo(foundOrder.getTableNo());
         assertThat(order.getQuantity()).isEqualTo(foundOrder.getQuantity());
         assertThat(order.getOrderDate()).isEqualTo(foundOrder.getOrderDate());
         assertThat(order.getOrderTime()).isEqualTo(foundOrder.getOrderTime());

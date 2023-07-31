@@ -26,7 +26,7 @@ public class Order {
 
     private String options;
 
-    private Integer table_no;
+    private Integer tableNo;
 
     private Integer quantity;
 
@@ -46,15 +46,18 @@ public class Order {
 
     private String ordererName;
 
+    public void modifyProductName(String productName) {
+        this.productName = productName;
+    }
 
     @Builder
-    public Order(Long id, String productName, String options, Integer table_no, Integer quantity,
+    public Order(Long id, String productName, String options, Integer tableNo, Integer quantity,
             LocalDate orderDate, LocalTime orderTime, LocalDateTime dateTime, String robotStatus,
             String dong, String ho, String seq, String ordererName) {
         this.id = id;
         this.productName = productName;
         this.options = options;
-        this.table_no = table_no;
+        this.tableNo = tableNo;
         this.quantity = quantity;
         this.orderDate = orderDate;
         this.orderTime = orderTime;

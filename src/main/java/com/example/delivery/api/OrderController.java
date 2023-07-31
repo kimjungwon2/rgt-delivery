@@ -5,6 +5,7 @@ import com.example.delivery.service.OrderService;
 import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,6 +18,11 @@ public class OrderController {
     @PostMapping("/api/order")
     public String createOrder(@Valid @RequestBody OrderCreateRequest request){
         return orderService.createOrder(request);
+    }
+
+    @PutMapping("/api/modify")
+    public void modifyCafeteria(){
+        orderService.modifyAllProductName();
     }
 
 }
