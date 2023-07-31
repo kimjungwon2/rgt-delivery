@@ -35,7 +35,7 @@ dependencies {
     implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect'
 
     implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
-
+    compileOnly 'org.springframework.session:spring-session-jdbc'
 }
 
 tasks.named('test') {
