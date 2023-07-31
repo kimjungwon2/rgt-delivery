@@ -16,7 +16,7 @@ public class OrderCreateRequest {
     private Long order_id;
 
     @NotNull(message = "상품 이름은 필수입니다.")
-    private String productName;
+    private String product_name;
 
     private String options;
 
@@ -25,13 +25,13 @@ public class OrderCreateRequest {
     @Positive(message = "수량은 양수여야 합니다.")
     private Integer quantity;
 
-    private LocalDate orderDate;
+    private LocalDate order_date;
 
-    private LocalTime orderTime;
+    private LocalTime order_time;
 
-    private LocalDateTime dateTime;
+    private String date_time;
 
-    private String robotStatus;
+    private String robot_status;
 
     private String dong;
 
@@ -39,6 +39,6 @@ public class OrderCreateRequest {
 
     private String seq;
 
-    private String ordererName;
+    private String orderer_name;
 
 }
