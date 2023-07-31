@@ -27,7 +27,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 //리소스 별 허용 범위
                 .authorizeRequests()
                 .antMatchers(PUBLIC_URI).permitAll()
-                .antMatchers("/api/login").hasRole(Role.USER.name())
+                .antMatchers("/move/user").hasRole(Role.USER.name())
                 .anyRequest().authenticated()
 
                 .and()

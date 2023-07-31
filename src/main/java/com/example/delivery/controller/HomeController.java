@@ -30,7 +30,12 @@ public class HomeController {
     }
 
     @GetMapping("/move")
-    public String postsSave(){
+    public String move(){
         return "hello";
+    }
+
+    @GetMapping("/move/user")
+    public String onlyUser(){
+        return "user";
     }
 }
