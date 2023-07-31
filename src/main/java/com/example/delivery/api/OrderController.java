@@ -14,8 +14,8 @@ public class OrderController {
 
     private final OrderService orderService;
 
-    @PostMapping("/order")
-    public StringBuffer createOrder(@Valid @RequestBody OrderCreateRequest request){
+    @PostMapping("/api/order")
+    public String createOrder(@Valid @RequestBody OrderCreateRequest request){
         return orderService.createOrder(request);
     }
 
