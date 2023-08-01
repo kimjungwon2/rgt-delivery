@@ -16,7 +16,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     private static final String[] PUBLIC_URI = {
             "/",
             "/api/order",
-            "/api/modify"
+            "/api/modify",
+            "/api/remote/order"
     };
 
     @Override
